@@ -1,0 +1,47 @@
+<div class="container">
+    <form>
+        <h5 style="color: darkcyan;"> Captura los Datos * son obligatorios</h5>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Id*</label>
+          <input type="number" class="form-control" name="id" aria-describedby="emailHelp"[(ngModel)]="modelo.id">
+          <div id="emailHelp" class="form-text">Ingrese el valor unico de registro id.</div>
+        </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Nombre *</label>
+            <input type="text" class="form-control" name="nombre" aria-describedby="emailHelp"[(ngModel)]="modelo.nombre">
+            <div id="emailHelp" class="form-text">Ingrese el nombre de la marca.</div>
+          </div> 
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Tipo*</label>
+            <input type="text" class="form-control" name="tipo" aria-describedby="emailHelp"[(ngModel)]="modelo.tipo">
+            <div id="emailHelp" class="form-text">Ingrese el tipo de auto.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Precio*</label>
+            <input type="number" class="form-control" name="precio" aria-describedby="emailHelp"[(ngModel)]="modelo.precio">
+            <div id="emailHelp" class="form-text">Ingrese el precio.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Fecha lanzamiento*</label>
+            <input type="date" class="form-control" name="fechaLanz" aria-describedby="emailHelp"[(ngModel)]="modelo.fechaLanz">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Marca*</label>
+            <select name="idMarca" class="form-select" aria-label="Default select example" [(ngModel)]="marca.id">                <option selected>seleccione una opcion</option>
+                <option *ngFor="let m of  listarMarcas" [ngValue]="m.id">{{m.nombre}}</option>
+              </select>
+          </div>
+
+         
+        <br>
+        <br>
+        <br>
+
+        <button type="submit" class="btn btn-primary"(click)="guardar()">Guardar</button>
+      </form>
+</div>
